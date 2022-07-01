@@ -1,3 +1,11 @@
+package "nginx" do
+  action :disable
+end
+
+package "nginx" do
+  action :stop
+end
+
 package "httpd" do
   action :install
 end
