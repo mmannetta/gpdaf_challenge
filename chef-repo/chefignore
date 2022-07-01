@@ -3,7 +3,7 @@
 # Lines that start with '# ' are comments.
 
 # OS generated files #
-######################
+#######################
 .DS_Store
 ehthumbs.db
 Icon?
