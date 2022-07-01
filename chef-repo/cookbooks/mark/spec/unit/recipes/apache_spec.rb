@@ -31,6 +31,11 @@ describe 'mark::apache' do
       expect(chef_run).to create_template('/var/www/cgi-bin/sysinfo.cgi')
     end
 
+    it 'disables and stops nginx service' do
+      expect(chef_run).to disable_service('nginx')
+      expect(chef_run).to stop_service('nginx')
+    end
+    
     it 'enables and starts httpd service' do
       expect(chef_run).to enable_service('httpd')
       expect(chef_run).to start_service('httpd')
