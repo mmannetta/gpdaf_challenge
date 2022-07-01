@@ -23,12 +23,12 @@ describe 'mark::apache' do
       expect(chef_run).to install_package('httpd')
     end
 
-    it 'creates the index.html file' do
-      expect(chef_run).to create_file('/var/www/html/index.html')
+    it 'creates the index.html file from template' do
+      expect(chef_run).to create_template('/var/www/html/index.html')
     end
 
-    it 'creates the sysinfo.cgi file' do
-      expect(chef_run).to create_file('/var/www/cgi-bin/sysinfo.cgi')
+    it 'creates the sysinfo.cgi file from template' do
+      expect(chef_run).to create_template('/var/www/cgi-bin/sysinfo.cgi')
     end
 
     it 'enables and starts httpd service' do
